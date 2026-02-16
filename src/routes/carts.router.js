@@ -4,7 +4,7 @@ const CartManager = require('../managers/CartManager');
 const router = Router();
 const cartManager = new CartManager();
 
-// POST /api/carts - Crear nuevo carrito
+
 router.post('/', async (req, res) => {
     try {
         const newCart = await cartManager.createCart();
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// GET /api/carts/:cid - Obtener productos de un carrito
+
 router.get('/:cid', async (req, res) => {
     try {
         const id = parseInt(req.params.cid);
@@ -25,7 +25,7 @@ router.get('/:cid', async (req, res) => {
     }
 });
 
-// POST /api/carts/:cid/product/:pid - Agregar producto al carrito
+
 router.post('/:cid/product/:pid', async (req, res) => {
     try {
         const cartId = parseInt(req.params.cid);

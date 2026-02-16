@@ -4,7 +4,7 @@ const ProductManager = require('../managers/ProductManager');
 const router = Router();
 const productManager = new ProductManager();
 
-// GET /api/products - Listar todos los productos
+ductos
 router.get('/', async (req, res) => {
     try {
         const products = await productManager.getProducts();
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET /api/products/:pid - Obtener producto por ID
+
 router.get('/:pid', async (req, res) => {
     try {
         const id = parseInt(req.params.pid);
@@ -25,12 +25,12 @@ router.get('/:pid', async (req, res) => {
     }
 });
 
-// POST /api/products - Crear nuevo producto
+
 router.post('/', async (req, res) => {
     try {
         const { title, description, code, price, stock, category, thumbnails } = req.body;
         
-        // Validar campos obligatorios
+       
         if (!title || !description || !code || !price || !stock || !category) {
             return res.status(400).json({ 
                 error: 'Faltan campos obligatorios: title, description, code, price, stock, category' 
@@ -53,7 +53,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// PUT /api/products/:pid - Actualizar producto
+
 router.put('/:pid', async (req, res) => {
     try {
         const id = parseInt(req.params.pid);
@@ -64,7 +64,7 @@ router.put('/:pid', async (req, res) => {
     }
 });
 
-// DELETE /api/products/:pid - Eliminar producto
+
 router.delete('/:pid', async (req, res) => {
     try {
         const id = parseInt(req.params.pid);
